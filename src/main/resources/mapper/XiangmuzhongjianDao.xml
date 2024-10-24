@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.XiangmuzhongjianDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.XiangmuzhongjianEntity" id="xiangmuzhongjianMap">
+        <result property="xiangmumingcheng" column="xiangmumingcheng"/>
+        <result property="xiangmuleixing" column="xiangmuleixing"/>
+        <result property="xiangmumiaoshu" column="xiangmumiaoshu"/>
+        <result property="xueshengtuandui" column="xueshengtuandui"/>
+        <result property="chengyuanjieshao" column="chengyuanjieshao"/>
+        <result property="lixiangshijian" column="lixiangshijian"/>
+        <result property="jihuajieshushijian" column="jihuajieshushijian"/>
+        <result property="xiangmujinzhanqingkuang" column="xiangmujinzhanqingkuang"/>
+        <result property="xiangmuchengyuanshifoubianhua" column="xiangmuchengyuanshifoubianhua"/>
+        <result property="nengfouanshiwanchengjihua" column="nengfouanshiwanchengjihua"/>
+        <result property="qianqijingfeishiyongqingkuang" column="qianqijingfeishiyongqingkuang"/>
+        <result property="qitaxushuomingdewenti" column="qitaxushuomingdewenti"/>
+        <result property="zhidaolaoshiyijian" column="zhidaolaoshiyijian"/>
+        <result property="yuanxiguanliyuanyijian" column="yuanxiguanliyuanyijian"/>
+        <result property="wenjian" column="wenjian"/>
+        <result property="zhanghao" column="zhanghao"/>
+        <result property="xingming" column="xingming"/>
+        <result property="sfsh" column="sfsh"/>
+        <result property="shhf" column="shhf"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.XiangmuzhongjianVO" >
+		SELECT * FROM xiangmuzhongjian  xiangmuzhongjian         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.XiangmuzhongjianVO" >
+		SELECT  xiangmuzhongjian.* FROM xiangmuzhongjian  xiangmuzhongjian 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.XiangmuzhongjianView" >
+
+		SELECT  xiangmuzhongjian.* FROM xiangmuzhongjian  xiangmuzhongjian 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.XiangmuzhongjianView" >
+		SELECT * FROM xiangmuzhongjian  xiangmuzhongjian <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+</mapper>
